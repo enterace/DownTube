@@ -27,8 +27,9 @@ namespace DownTube
             }
 
             // Event handler
-            try {
-                
+            try
+            {
+
                 // Creating a new youtube client
                 YoutubeClient youtubeClient = new YoutubeClient();
 
@@ -37,16 +38,28 @@ namespace DownTube
 
                 // Opening a new video page with the video object
                 await Navigation.PushAsync(new VideoPage(video));
-            } catch(Exception exception)
+            }
+            catch (YoutubeExplode.Exceptions.RequestLimitExceededException)
+            {
+                await DisplayAlert("Error", "You have exceeded the youtube rate limit. Possible causes:\n\n1) Using this app too much\n2) Using a VPN", "OK");
+            }
+            catch (System.Net.Http.HttpRequestException) 
+            {
+                await DisplayAlert("Error", "Please check your internet connection.", "OK");
+            }catch (System.ArgumentException)
+            {
+                await DisplayAlert("Error", "Your entered URL was not a Youtube video.", "OK");
+            }
+            catch (Exception exception)
             {
                 await DisplayAlert("Error", "We couldn't open the URL", "OK");
-                Console.WriteLine(exception );
-                loadButton.IsEnabled = true;
-                return;
+                Console.WriteLine(exception);
             }
-
-            // Resetting the load button
-            loadButton.IsEnabled = true;
+            finally
+            {
+                // Resetting the load button
+                loadButton.IsEnabled = true;
+            }
         }
     }
 
