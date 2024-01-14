@@ -7,6 +7,7 @@ DownTube is a cross-platform open-source application developed by EnterACE using
 ## Features
 
 - Retrieve video information using the YouTubeExplode NuGet package.
+- Selecting video quality.
 - Save downloaded videos to the Downloads folder on Android devices and the Documents folder on Windows.
 
 ## Requirements
@@ -50,7 +51,9 @@ To get started with DownTube, download the latest release from the [Releases](ht
 2. Paste the youtube video URL in the URL section.
 3. Tap on the `Load Video` button.
 4. You now can see the video title, duration and thumbnail.
-5. Click the `Download Video` button to download and save the video on your device.
+5. Click on the `Get Manifest` button to retreve available video streams.
+6. When available, select your desired video quality from the selector.
+7. Click on the `Download Video` button to download and save the video on your device.
 
 ## Contributing
 
