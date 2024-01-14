@@ -18,10 +18,23 @@
                 Style="{StaticResource SubHeadline}"
                 HorizontalOptions="Start"/>
             <Button
-                x:Name="downloadButton" 
+                x:Name="manifestButton" 
+                Text="Get Manifest" 
+                SemanticProperties.Hint="Downloads the specified youtube video manifest"
+                Clicked="OnManifestClicked"
+                HorizontalOptions="Start"/>
+            <Picker 
+                IsVisible="false"
+                x:Name="qualityOptionsPicker"
+                Title="Select a video quality"
+                ItemsSource="{Binding qualityOptions}"
+                SelectedItem="{Binding SelectedQualityOption, Mode=TwoWay}" />
+            <Button
+                IsVisible="false"
+                x:Name="downloadVideoButton" 
                 Text="Download Video" 
-                SemanticProperties.Hint="Downloads the specified youtube video URL you have entered"
-                Clicked="OnDownloadClicked"
+                SemanticProperties.Hint="Downloads the specified youtube video."
+                Clicked="OnVideoDownloadClicked"
                 HorizontalOptions="Start"/>
             <Image
                 x:Name="videoThumbnail"

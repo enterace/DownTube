@@ -9,11 +9,16 @@ namespace DownTube
             InitializeComponent();
         }
 
+        // The event handler for the download button
         private async void OnLoadClicked(object sender, EventArgs e)
         {
-            String enteredUrl = videoUrlEntry.Text;
+            // Getting the video url entry
+            string enteredUrl = videoUrlEntry.Text;
+
+            // Disabling the load button to prevent overuse
             loadButton.IsEnabled = false;
 
+            // Checing if the entry is even a URL
             if (!Uri.TryCreate(enteredUrl, UriKind.Absolute, out _))
             {
                 await DisplayAlert("Invalid URL", "Please enter a valid url", "OK");
@@ -21,10 +26,16 @@ namespace DownTube
                 return;
             }
 
+            // Event handler
             try {
+                
+                // Creating a new youtube client
                 YoutubeClient youtubeClient = new YoutubeClient();
+
+                // Getting the video object
                 YoutubeExplode.Videos.Video video = await youtubeClient.Videos.GetAsync(enteredUrl);
 
+                // Opening a new video page with the video object
                 await Navigation.PushAsync(new VideoPage(video));
             } catch(Exception exception)
             {
@@ -33,6 +44,8 @@ namespace DownTube
                 loadButton.IsEnabled = true;
                 return;
             }
+
+            // Resetting the load button
             loadButton.IsEnabled = true;
         }
     }

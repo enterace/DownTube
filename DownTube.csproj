@@ -27,8 +27,8 @@
 		<ApplicationId>ir.enterace.downtube</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-		<ApplicationVersion>1</ApplicationVersion>
+		<ApplicationDisplayVersion>1.0.1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>2</ApplicationVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
@@ -48,34 +48,50 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
 	  <ApplicationId>ir.enterace.downtube</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <ApplicationId>ir.enterace.downtube</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-maccatalyst|AnyCPU'">
 	  <ApplicationId>ir.enterace.downtube</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationId>ir.enterace.downtube</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
 	  <ApplicationId>ir.enterace.downtube</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
 	  <ApplicationId>ir.enterace.downtube</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-maccatalyst|AnyCPU'">
 	  <ApplicationId>ir.enterace.downtube</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationId>ir.enterace.downtube</ApplicationId>
+	  <ApplicationDisplayVersion>1.0.1.0</ApplicationDisplayVersion>
+	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -109,6 +125,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="Classes\" />
 	  <Folder Include="Resources\Images\" />
 	</ItemGroup>
 
